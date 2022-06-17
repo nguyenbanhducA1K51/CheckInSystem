@@ -1,4 +1,27 @@
 const mongoose=require("mongoose");
+
+const checkInFormContentScheme =new mongoose.Schema({
+    "workProgress":{
+        type: String,
+        required: false,
+    },
+    "difficulty":{
+        type: String,
+        required: false,
+    },
+    "idea":{
+        type: String,
+        required: false,
+    },
+    "comitmmentLevel":{
+        type: String,
+        required: false,
+    },
+    "responseFromOpponent":{
+        type: String,
+        required: false,
+    },
+});
 const checkInFormScheme= new mongoose.Schema({
 
     "date":{
@@ -21,30 +44,13 @@ const checkInFormScheme= new mongoose.Schema({
         type: String,
         required: false,
       },
+      department:{
+          type: String
+      },
       "content": checkInFormContentScheme
       
 
 })
-const checkInFormContentScheme =new mongoose.Schema({
-    "workProgress":{
-        type: String,
-        required: false,
-    },
-    "difficulty":{
-        type: String,
-        required: false,
-    },
-    "idea":{
-        type: String,
-        required: false,
-    },
-    "ComitmmentLevel":{
-        type: String,
-        required: false,
-    },
-    "ResponseFromOpponent":{
-        type: String,
-        required: false,
-    },
-})
-export default mongoose.model("checkInForm",checkInFormScheme);
+
+const checkinModel=mongoose.model("checkInForm",checkInFormScheme);
+module.exports=  checkinModel
