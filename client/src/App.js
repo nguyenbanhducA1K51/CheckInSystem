@@ -1,9 +1,12 @@
 
-import Page from "./component/page";
+import Main from "./component/main"
+
 function App() {
+ 
   return (
     <div className="App">
-     <Page/>
+     
+     <Main/>
     </div>
   );
 }

@@ -1,23 +1,20 @@
 import React,{useState,useEffect,useRef} from "react";
 import '../style.css'
-const   SignUpForm=({handleData})=>{
-  const [input,setInput]=useState({email:"",password:""})
+const   SignUpForm=({handleSignup,errorMessage,showLogin})=>{
+  
 const email=useRef();
 const password=useRef();
 const repeatPassword=useRef();
-const errorMessage=useRef();
+const errorMes=useRef();
 const formContent=useRef();
+useEffect(()=>{
+  if(errorMessage!=null)
+{errorMes.current.innerHTML=errorMessage}
+},[errorMessage])
   function emailIsValid(){
    console.log(email.current.value);
    
-//    let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 
-//     if(!regex.test(email.current.value))
-//     {
-// console.log("invalid  email")
-// return false
-//     }
-//     return true
 return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.current.value)
 
   }
@@ -36,24 +33,24 @@ return false
    
     
 if (!passwordIsValid()){
-  errorMessage.current.innerHTML="invalid password!"
+  errorMes.current.innerHTML="invalid password!"
 }
 else if(!emailIsValid()){
   console.log('invalid');
   
-  errorMessage.current.innerHTML="invalid email!"
+  errorMes.current.innerHTML="invalid email!"
 }
 else{
-  formContent.current.style.visibility="hidden"
-handleData(email.current.value,password.current.value);
-console.log('abc');
+  // formContent.current.style.visibility="hidden"
+handleSignup(email.current.value,password.current.value);
+
 
 
 }
   }
     return(
         <>
-<div className="signup">
+<div className="signup" >
         <form ref={formContent} action="" >
         <div class="container">
           <h1>Sign Up</h1>
@@ -71,13 +68,12 @@ console.log('abc');
           <input ref={repeatPassword}id="passwordrepeat" type="password" placeholder="Repeat Password" name="psw-repeat" required/>
       
           
-
-          <p ref={errorMessage}></p>
+          <p ref={errorMes} className="border border-warning text-warning p-2"></p>
 
           <p>By creating an account you agree to our erms & Privacy.</p>
       
           <div class="clearfix">
-            <button type="button" className="cancelbtn">Cancel</button>
+            <button onClick={showLogin} type="button" className="cancelbtn">Login</button>
             <button onClick={submit} type="button" className="signupbtn">Sign Up</button>
           </div>
         </div>
