@@ -2,9 +2,9 @@
   <div>
     <div class="allForm">
       <div class="formHeader">
-        <li>Tuần</li>
-        <li>Ngày</li>
-        <li>Người được checkin</li>
+        <li>Tuần (Week)</li>
+        <li>Ngày (Date)</li>
+        <li>Người được checkin (Check in person)</li>
       </div>
 
       <FormItem v-for="item in formList" :key="item._id" :data="item" />

@@ -28,8 +28,8 @@
       </div>
 
       <div class="container">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw"> Forgot <a href="#">password?</a> </span>
+        <!-- <button type="button" class="cancelbtn">Cancel</button> -->
+        <!-- <span class="psw"> Forgot <a href="#">password?</a> </span> -->
       </div>
     </form>
   </div>

@@ -2,7 +2,7 @@
   <div>
     <div v-if="showDetail" class="detail">
       <div class="detailData">
-        <p class="detailTag">Tuần</p>
+        <p class="detailTag">Tuần(Week)</p>
         <input
           type="text"
           name=""
@@ -11,7 +11,7 @@
           v-model="temp.content.week"
           :disabled="input.disabled"
         />
-        <p class="detailTag">Ngày</p>
+        <p class="detailTag">Ngày(Day)</p>
         <input
           type="text"
           name=""
@@ -20,7 +20,7 @@
           v-model="temp.content.day"
           :disabled="input.disabled"
         />
-        <p class="detailTag">Đối tượng checkin</p>
+        <p class="detailTag">Đối tượng checkin(Check in person)</p>
         <input
           type="text"
           name=""
@@ -29,7 +29,7 @@
           v-model="temp.content.checkInOpponent"
           :disabled="input.disabled"
         />
-        <p class="detailTag">Tiến độ công việc</p>
+        <p class="detailTag">Tiến độ công việc(Work progress)</p>
         <input
           type="text"
           name=""
@@ -38,7 +38,7 @@
           v-model="temp.content.progress"
           :disabled="input.disabled"
         />
-        <p class="detailTag">Trở ngại khó khăn</p>
+        <p class="detailTag">Trở ngại khó khăn(difficulty)</p>
         <input
           type="text"
           name=""
@@ -47,7 +47,7 @@
           v-model="temp.content.difficulty"
           :disabled="input.disabled"
         />
-        <p class="detailTag">Sáng kiến/đề xuất</p>
+        <p class="detailTag">Sáng kiến/đề xuất(propose idea)</p>
         <input
           type="text"
           name=""
@@ -57,7 +57,7 @@
           :disabled="input.disabled"
         />
         <p class="detailTag">
-          Mức độ tự tin/Cam kết (Không ổn lắm - Ổn - Rất ổn)
+          Mức độ tự tin/Cam kết (Không ổn lắm - Ổn - Rất ổn) (commitment level)
         </p>
         <input
           type="text"
@@ -68,7 +68,7 @@
           :disabled="input.disabled"
         />
         <p class="detailTag">
-          Phản hồi của Cấp trên (người trực tiếp checkin hoặc cấp trên nữa)
+          Phản hồi của Cấp trên (người trực tiếp checkin hoặc cấp trên nữa)(response from manager)
         </p>
         <input
           type="text"
@@ -81,10 +81,10 @@
       </div>
       <div class="detailButton">
         <button ref="cancelBut" class="button-7" type="button" @click="cancel">
-          Huỷ
+          Cancel
         </button>
         <button v-if="but.save" ref="saveBut" class="button-8" @click="save">
-          Lưu
+          Save
         </button>
         <button
           v-if="but.update"
@@ -92,7 +92,7 @@
           class="button-8"
           @click="update"
         >
-          Cập nhật
+          Update
         </button>
       </div>
     </div>
@@ -102,7 +102,7 @@
         <p>{{ data.content.week }}</p>
         <p>{{ data.content.day }}</p>
         <p>{{ data.content.checkInOpponent }}</p>
-        <button id="deleteBut" @click="deleteForm">Xoá</button>
+        <button id="deleteBut" @click="deleteForm">Delete</button>
       </div>
     </div>
   </div>

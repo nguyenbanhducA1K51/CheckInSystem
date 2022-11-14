@@ -4,16 +4,15 @@
     <table class="table1">
       <thead>
         <tr class="head1">
-          <th>Tuần</th>
-          <th>Ngày (MM/DD/YYYY)</th>
-          <th>Người được checkin</th>
-          <th>Tiến độ công việc</th>
-          <th>Trở ngại/Khó khăn</th>
-          <th>Sáng kiến/đề xuất</th>
-          <th>Mức độ tự tin/Cam kết(Không ổn lắm-Ổn-Rất ổn)</th>
+          <th>Tuần (Week)</th>
+          <th>Ngày (Date)  (MM/DD/YYYY)</th>
+          <th>Người được checkin  (check in person/manager)</th>
+          <th>Tiến độ công việc  (work progress)</th>
+          <th>Trở ngại/Khó khăn  (difficulty)</th>
+          <th>Sáng kiến/đề xuất  (idea to propose )</th>
+          <th>Mức độ tự tin/Cam kết  (Không ổn lắm-Ổn-Rất ổn)  (commitment level (low-medium-high))</th>
           <th>
-            Phản hồi của Cấp trên (người trực tiếp checkin hoặc cấp trên nữa){"
-            "}
+            Phản hồi của Cấp trên (người trực tiếp checkin hoặc cấp trên nữa)   (response from manager)
           </th>
         </tr>
       </thead>
@@ -75,9 +74,9 @@
           </td>
           <td>
             <select v-model="data.commitment">
-              <option value="không ổn lắm">không ổn lắm</option>
-              <option value="ổn">ổn</option>
-              <option value="rất ổn">rất ổn</option>
+              <option value="không ổn lắm">không ổn lắm(low)</option>
+              <option value="ổn">ổn(medium)</option>
+              <option value="rất ổn">rất ổn(high)</option>
             </select>
           </td>
           <td>
@@ -168,7 +167,7 @@ export default {
       console.log(this.data.day);
       
       if (!this.isValidDate(this.data.day)) {
-        this.errorMessage = " dữ liệu ngày không hợp lệ";
+        this.errorMessage = " dữ liệu ngày không hợp lệ(invalid input)";
         return false;
       }
       return true;

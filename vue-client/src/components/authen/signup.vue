@@ -3,7 +3,7 @@
     <form ref="{formContent}" action="">
       <div class="container">
         <h1>Sign Up</h1>
-        <p>Please fill in this form to create an account.</p>
+        <!-- <p>Please fill in this form to create an account.</p> -->
         <hr />
         <div>
           <label htmlFor="email"><b>Email</b></label>
@@ -39,7 +39,7 @@
 
         <p class="text-warning p-2">{{ error }}</p>
 
-        <p>By creating an account you agree to our erms & Privacy.</p>
+        <!-- <p>By creating an account you agree to our Terms & Privacy.</p> -->
 
         <div class="clearfix">
           <button @click="showLogin" type="button" class="loginbtn">
